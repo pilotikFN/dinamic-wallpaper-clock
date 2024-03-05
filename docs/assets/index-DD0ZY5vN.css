@@ -1,1 +1,37 @@
-@import"https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap";*,*:after,*:before{-webkit-user-select:none;user-select:none}html{height:100%}body{background:url(/assets/background-BZs6JhYw.jpg);background-position:center;background-repeat:no-repeat;background-size:cover;background-attachment:fixed;margin:0;font-family:Nunito,sans-serif;display:flex;justify-content:center;align-items:center;height:100%}.clock{color:#fff;font-size:8rem;font-weight:700;text-shadow:0px 0px 15px rgba(0,0,0,.25);text-align:center}.date{color:#fff;font-size:2rem;font-weight:500;text-shadow:0px 0px 15px rgba(0,0,0,.25);text-align:center}
+@import "https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap";
+*,
+*:after,
+*:before {
+   -webkit-user-select: none;
+   user-select: none;
+}
+html {
+   height: 100%;
+}
+body {
+   background: url(background-BZs6JhYw.jpg);
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-attachment: fixed;
+   margin: 0;
+   font-family: Nunito, sans-serif;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100%;
+}
+.clock {
+   color: #fff;
+   font-size: 8rem;
+   font-weight: 700;
+   text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+   text-align: center;
+}
+.date {
+   color: #fff;
+   font-size: 2rem;
+   font-weight: 500;
+   text-shadow: 0px 0px 15px rgba(0, 0, 0, 0.25);
+   text-align: center;
+}
