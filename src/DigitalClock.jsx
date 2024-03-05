@@ -17,6 +17,7 @@ const monthsName = [
 
 const DigitalClock = () => {
    const [time, setTime] = useState(new Date());
+   const [offsetY, setOffsetY] = useState(-130);
 
    const updateTime = () => {
       setTime(new Date());
@@ -29,7 +30,7 @@ const DigitalClock = () => {
 
       const meridiem = hours >= 12 ? "PM" : "AM";
 
-      return `${padZero(hours)}:${padZero(minutes)}:${padZero(seconds)}`;
+      return `${padZero(hours)}:${padZero(minutes)}`
    };
 
    const formatDate = () => {
@@ -53,7 +54,9 @@ const DigitalClock = () => {
    }, []);
 
    return (
-      <div className="clock-container">
+      <div style={{
+         transform: `translateY(${offsetY}px)`
+      }} className="clock-container">
          <div className="clock">
             <span>{formatTime()}</span>
          </div>
