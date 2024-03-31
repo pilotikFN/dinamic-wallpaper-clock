@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import DigitalClock from "./DigitalClock";
 import Background from "./components/Background";
 import { useThemeContext } from "./contexts/theme-context";
@@ -8,15 +8,24 @@ import settingsIcon from "./assets/settings_icon.svg";
 import SettingsPage from "./components/SettingsPage";
 
 function App() {
-   const { theme, setTheme } = useThemeContext();
+   const { theme } = useThemeContext();
    const [isSettingsOpen, setSettingsOpen] = useState(false);
+
+   const [backgroundWallpaper, setBackgroundWallpaper] = useState(
+      theme.wallpaper
+   );
 
    const settingsButtonHandler = () => {
       setSettingsOpen((prev) => !prev);
    };
 
+   const onSettingsSaveHandler = (wallpaper) => {
+      localStorage.setItem("wallpaper", wallpaper);
+      setBackgroundWallpaper(wallpaper);
+   };
+
    return (
-      <Background wallpaper={theme.wallpaper}>
+      <Background wallpaper={backgroundWallpaper}>
          <DigitalClock />
          <MenuButtons>
             <MenuButton onClick={settingsButtonHandler}>
@@ -24,7 +33,11 @@ function App() {
             </MenuButton>
          </MenuButtons>
          {isSettingsOpen ? (
-            <SettingsPage onClose={settingsButtonHandler} />
+            <SettingsPage
+               theme={backgroundWallpaper}
+               onClose={settingsButtonHandler}
+               onSave={onSettingsSaveHandler}
+            />
          ) : (
             <></>
          )}

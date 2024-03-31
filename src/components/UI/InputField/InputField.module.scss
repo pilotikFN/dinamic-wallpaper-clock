@@ -1,0 +1,20 @@
+.inputField {
+   display: flex;
+   flex-direction: column;
+   gap: 5px;
+
+   input {
+      all: unset;
+
+      padding: 10px 12px;
+      background: rgba(255, 255, 255, 0.5);
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+
+      transition: all 0.2s ease-in;
+
+      &:focus {
+         border: 1px solid rgba(0, 0, 0, 0.4);
+      }
+   }
+}
