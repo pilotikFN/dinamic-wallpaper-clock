@@ -1,0 +1,38 @@
+.menuButton {
+   width: 45px;
+   height: 45px;
+
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   border-radius: 16px;
+
+   transition: background 0.2s ease-in;
+   transition: backdrop-filter 0.2s ease-in;
+
+   transition: transform 0.1s ease-out;
+
+   cursor: pointer;
+
+   &:hover {
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(8px);
+   }
+
+   &:active {
+      transform: scale(0.9);
+   }
+
+   img {
+      width: 25px;
+      height: 25px;
+      opacity: 0.2;
+
+      transition: all 0.2s ease-in;
+   }
+
+   &:hover img {
+      opacity: 0.6;
+   }
+}
