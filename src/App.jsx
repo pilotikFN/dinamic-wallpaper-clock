@@ -5,6 +5,7 @@ import { useThemeContext } from "./contexts/theme-context";
 import MenuButton from "./components/UI/MenuButton";
 import MenuButtons from "./components/UI/MenuButtons";
 import settingsIcon from "./assets/settings_icon.svg";
+import SettingsPage from "./components/SettingsPage";
 
 function App() {
    const { theme, setTheme } = useThemeContext();
@@ -22,7 +23,11 @@ function App() {
                <img src={settingsIcon} alt="settings" />
             </MenuButton>
          </MenuButtons>
-         {isSettingsOpen ? <p>Настройки открыты</p> : <></>}
+         {isSettingsOpen ? (
+            <SettingsPage onClose={settingsButtonHandler} />
+         ) : (
+            <></>
+         )}
       </Background>
    );
 }

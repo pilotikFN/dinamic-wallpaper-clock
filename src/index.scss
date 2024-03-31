@@ -5,6 +5,7 @@
 *::after,
 *::before {
    user-select: none;
+   box-sizing: border-box;
 }
 
 html {
